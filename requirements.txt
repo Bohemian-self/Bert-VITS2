@@ -5,8 +5,8 @@ numba
 phonemizer
 scipy
 tensorboard
-torch==1.12.1
-torchvision==0.13.1
+torch==2.0.0
+torchvision==0.15.0
 Unidecode
 amfm_decompy
 jieba
