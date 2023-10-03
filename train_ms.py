@@ -44,10 +44,7 @@ global_step = 0
 
 
 def run():
-    dist.init_process_group(
-        backend="gloo",
-        init_method="env://",  # Due to some training problem,we proposed to use gloo instead of nccl.
-    )  # Use torchrun instead of mp.spawn
+    dist.init_process_group(backend="nccl",init_method="env://")  # Use torchrun instead of mp.spawn
     rank = dist.get_rank()
     n_gpus = dist.get_world_size()
     hps = utils.get_hparams()
@@ -591,5 +588,4 @@ def evaluate(hps, generator, eval_loader, writer_eval):
 
 
 if __name__ == "__main__":
-    os.environ["TORCH_DISTRIBUTED_DEBUG"] = "DETAIL"
     run()
