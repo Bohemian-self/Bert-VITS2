@@ -5,7 +5,7 @@ numba
 phonemizer
 scipy
 tensorboard
-torch==2.0.0
+torch
 torchvision
 Unidecode
 amfm_decompy
